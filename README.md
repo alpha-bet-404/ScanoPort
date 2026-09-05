@@ -1,10 +1,10 @@
-# ScanoPort
+# ScanoPort 🛡️
 
-A modular, dependency CLI TCP port scanner written in Python 3. Designed for lightweight network reconnaissance, baseline security assessments, and custom scanner integration.
+A modular, dependency-free CLI TCP port scanner written in Python 3. Designed for lightweight network reconnaissance, baseline security assessments, and custom scanner integration.
 
 ---
 
-## Key Capabilities
+## Key Capabilities ⚡
 
 * **Modular Design**: Clean separation between argument parsing, target resolution, and network interaction.
 * **Flexible Input Specifications**: Accepts individual ports, arbitrary comma-separated lists, range boundaries, or default top-port profiles.
@@ -13,49 +13,56 @@ A modular, dependency CLI TCP port scanner written in Python 3. Designed for lig
 
 ---
 
-## Demo
+## Demo 
 
-![ScanoPort Demo]()
+![ScanoPort Demo](https://raw.githubusercontent.com/alpha-bet-404/ScanoPort/main/DEMO/Demo.gif)
 
 ---
 
-## Installation & Deployment
-
+## Installation & Deployment 📦
+```
 git clone https://github.com/alpha-bet-404/ScanoPort.git
 cd ScanoPort
 chmod +x scanoport
+```
 
 # Optional: Create system-wide binary link
+```
 sudo ln -s $(pwd)/scanoport /usr/local/bin/scanoport
-
+```
 ---
 
-## Usage Syntax & Examples
+## Usage Syntax & Examples 🎯
 
 # Basic usage
+```
 scanoport <Target_IP_or_Domain> [Port_Specification]
-
+```
 # Single target port
+```
 scanoport 192.168.1.1 80
-
+```
 # Arbitrary port list
+```
 scanoport scanme.nmap.org 22,80,443,8080
-
+```
 # Sequential port range
+```
 scanoport 10.10.10.1 1-1024
-
+```
 ---
 
-## Project Structure
+## Project Structure 🏗️
 
 ScanoPort
+```
   ├── scanoport           # Primary execution CLI interface
   ├── check.py            # Target resolution and input validation logic
   ├── TypesForScan.py     # Socket connection handling & scan loops
   └── ports.py            # Static port list mappings & top-ports data
-
+```
 ---
 
-## License
+## License 📜
 
 Distributed under the MIT License.
