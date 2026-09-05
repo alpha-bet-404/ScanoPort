@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+import check
+import hel
+
+
+if len(sys.argv) == 2 or len(sys.argv) == 3:
+	if sys.argv[1] == "-h" or sys.argv[1] == "--h" or sys.argv[1] == "-help" or sys.argv[1] == "--help":
+		hel.help()
+	else:
+		target = sys.argv[1]
+		port = sys.argv[2] if len(sys.argv) == 3 else ''
+		check.check_root()
+		check.start(target,port)
+else:
+	print('\n\033[31mInvaild:\033[0m \033[33m<argument>\033[0m')
+	print('\033[31mExample:\033[0m \033[32mpython3 scanoport \033[1;32m192.168.1.0\033[0m OR \033[1;32mgoogle.com\033[0m <PORT>')
