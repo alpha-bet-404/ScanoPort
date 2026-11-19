@@ -22,7 +22,7 @@ A modular, dependency-free CLI TCP port scanner written in Python 3. Designed fo
 ## Installation & Deployment 📦
 ```
 git clone https://github.com/alpha-bet-404/ScanoPort.git
-cd ScanoPort
+cd ScanoPort/ScanoPort
 chmod +x scanoport
 ```
 
