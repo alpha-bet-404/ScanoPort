@@ -9,6 +9,7 @@ A modular, dependency-free CLI TCP port scanner written in Python 3. Designed fo
 * **Modular Design**: Clean separation between argument parsing, target resolution, and network interaction.
 * **Flexible Input Specifications**: Accepts individual ports, arbitrary comma-separated lists, range boundaries, or default top-port profiles.
 * **Domain & IP Resolution**: Native IPv4/IPv6 address parsing and hostname resolution.
+* **ARP Scan**: Discover live hosts (IP + MAC) on your local network with `-a <interface>`.
 * **Zero External Dependencies**: Built entirely on standard Python 3 core modules (`socket`, `sys`, `ipaddress`).
 
 ---
@@ -50,6 +51,16 @@ scanoport scanme.nmap.org 22,80,443,8080
 ```
 scanoport 10.10.10.1 1-1024
 ```
+# ARP scan the local network of an interface
+```
+sudo scanoport -a eth0
+```
+# ARP scan a specific network
+```
+sudo scanoport -a eth0 192.168.1.0/24
+```
+> ARP scan needs Linux + root, and works on IPv4 local networks only.
+
 ---
 
 ## Project Structure 🏗️
@@ -59,6 +70,7 @@ ScanoPort
   ├── scanoport           # Primary execution CLI interface
   ├── check.py            # Target resolution and input validation logic
   ├── TypesForScan.py     # Socket connection handling & scan loops
+  ├── arp.py              # ARP scan (raw socket, local network discovery)
   └── ports.py            # Static port list mappings & top-ports data
 ```
 ---
