@@ -29,7 +29,7 @@ chmod +x scanoport
 
 # Optional: Create system-wide binary link
 ```
-sudo ln -s $(pwd)/scanoport /usr/local/bin/scanoport
+sudo ln -sf "$(pwd)/scanoport" /usr/bin/scanoport && sudo ln -sf "$(pwd)/scanoport" /usr/local/sbin/scanoport
 ```
 ---
 
